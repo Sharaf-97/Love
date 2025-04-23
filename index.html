@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Do You Love Me?</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For My Love</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container" id="questionSection">
-<h1>Do you love me?</h1>
+<div class="container">
+<h1 class="question">Do you love me?</h1>
+<div class="buttons">
 <button id="yesBtn">Yes</button>
 <button id="noBtn">No</button>
 </div>
-<div class="surprise" id="surpriseSection">
-<h2>I knew it!</h2>
-<p>We've been together for 243 days, and every one of them has been magical.</p>
-<img src="https://media.giphy.com/media/3o7abB06u9bNzA8lu8/giphy.gif" alt="Cute Hug GIF">
-<button id="hugBtn">Send a Virtual Hug</button>
-<div id="hugMessage"></div>
+<div id="loveSection" class="hidden">
+<img src="https://media.giphy.com/media/jUwpNzg9IcyrK/giphy.gif" alt="Hug GIF" class="hugGif" />
+<p class="loveText">I love you more than words can say!</p>
+<p class="daysCounter">We've been together for <span id="days">244</span> days and counting!</p>
+</div>
 </div>
 <script src="script.js"></script>
 </body>
