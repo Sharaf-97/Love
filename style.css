@@ -6,7 +6,7 @@ body {
  padding: 0;
  font-family: 'Comic Sans MS', cursive, sans-serif;
  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
- overflow: hidden;
+ overflow-x: hidden;
 }
 .container {
  text-align: center;
@@ -55,7 +55,6 @@ button {
 .hidden {
  display: none;
 }
-/* Falling hearts */
 .heart {
  position: fixed;
  top: -20px;
