@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
 <title>Do You Love Me?</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="container" id="questionSection">
 <h1>Do you love me?</h1>
-<div class="buttons">
-<button id="yes">Yes</button>
-<button id="no">No</button>
+<button id="yesBtn">Yes</button>
+<button id="noBtn">No</button>
 </div>
-<p id="counter"></p>
+<div class="surprise" id="surpriseSection">
+<h2>I knew it!</h2>
+<p>We've been together for 243 days, and every one of them has been magical.</p>
+<img src="https://media.giphy.com/media/3o7abB06u9bNzA8lu8/giphy.gif" alt="Cute Hug GIF">
+<button id="hugBtn">Send a Virtual Hug</button>
+<div id="hugMessage"></div>
 </div>
-<div id="floating-hearts"></div>
 <script src="script.js"></script>
 </body>
 </html>
