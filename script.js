@@ -1,51 +1,33 @@
-const noButton = document.getElementById('no');
-const yesButton = document.getElementById('yes');
-noButton.addEventListener('mouseover', () => {
- const x = Math.random() * (window.innerWidth - 100);
- const y = Math.random() * (window.innerHeight - 100);
- noButton.style.left = `${x}px`;
- noButton.style.top = `${y}px`;
+const noBtn = document.getElementById('noBtn');
+const yesBtn = document.getElementById('yesBtn');
+const questionSection = document.getElementById('questionSection');
+const surpriseSection = document.getElementById('surpriseSection');
+const hugBtn = document.getElementById('hugBtn');
+const hugMessage = document.getElementById('hugMessage');
+let moveCount = 0;
+noBtn.addEventListener('mouseover', () => {
+ const x = Math.random() * window.innerWidth * 0.8;
+ const y = Math.random() * window.innerHeight * 0.8;
+ noBtn.style.position = 'absolute';
+ noBtn.style.left = `${x}px`;
+ noBtn.style.top = `${y}px`;
+ moveCount++;
 });
-yesButton.addEventListener('click', () => {
- confetti();
- showHugPopup();
+yesBtn.addEventListener('click', () => {
+ questionSection.style.display = 'none';
+ surpriseSection.style.display = 'block';
+ setInterval(createHeart, 300);
 });
-function confetti() {
- for (let i = 0; i < 100; i++) {
-   const heart = document.createElement('div');
-   heart.classList.add('heart');
-   heart.textContent = '❤️';
-   heart.style.left = `${Math.random() * 100}%`;
-   heart.style.animationDelay = `${Math.random()}s`;
-   document.getElementById('floating-hearts').appendChild(heart);
-   setTimeout(() => heart.remove(), 8000);
- }
+hugBtn.addEventListener('click', () => {
+ hugMessage.innerText = "Sending a BIG warm virtual hug your way!";
+});
+function createHeart() {
+ const heart = document.createElement('div');
+ heart.classList.add('heart');
+ heart.innerText = '❤️';
+ heart.style.left = Math.random() * window.innerWidth + 'px';
+ document.body.appendChild(heart);
+ setTimeout(() => {
+   heart.remove();
+ }, 4000);
 }
-function updateCounter() {
- const startDate = new Date('2023-08-22');
- const now = new Date();
- const diff = Math.floor((now - startDate) / (1000 * 60 * 60 * 24));
- document.getElementById('counter').textContent = `We've been together for ${diff} days and counting!`;
-}
-function showHugPopup() {
- const popup = document.createElement('div');
- popup.style.position = 'fixed';
- popup.style.top = '50%';
- popup.style.left = '50%';
- popup.style.transform = 'translate(-50%, -50%)';
- popup.style.backgroundColor = '#fff';
- popup.style.color = '#333';
- popup.style.padding = '30px';
- popup.style.borderRadius = '20px';
- popup.style.boxShadow = '0 0 30px rgba(0,0,0,0.3)';
- popup.style.fontSize = '1.5em';
- popup.style.zIndex = '9999';
- popup.innerHTML = `
-<div style="font-size: 2em;">Here’s your virtual hug!</div>
-<div style="font-size: 4em;">(づ｡◕‿‿◕｡)づ</div>
-<div style="margin-top: 20px;">I love you so much</div>
-<button style="margin-top: 20px; padding: 10px 20px; font-size: 1em; border: none; background-color: #f44336; color: white; border-radius: 10px; cursor: pointer;" onclick="this.parentElement.remove()">Close</button>
- `;
- document.body.appendChild(popup);
-}
-updateCounter();
