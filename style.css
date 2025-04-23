@@ -1,3 +1,6 @@
+* {
+ box-sizing: border-box;
+}
 body {
  margin: 0;
  padding: 0;
@@ -16,6 +19,8 @@ body {
 }
 .buttons {
  margin-top: 30px;
+ position: relative;
+ height: 100px;
 }
 button {
  padding: 15px 30px;
@@ -25,6 +30,8 @@ button {
  border-radius: 10px;
  cursor: pointer;
  transition: all 0.3s ease;
+ position: relative;
+ z-index: 10;
 }
 #yesBtn {
  background-color: #8aff8a;
@@ -32,15 +39,17 @@ button {
 #noBtn {
  background-color: #ff7f7f;
  position: absolute;
+ top: 0;
+ left: 0;
 }
 .hugGif {
- width: 300px;
+ width: 250px;
  margin-top: 20px;
  border-radius: 15px;
 }
 .loveText, .daysCounter {
  color: #fff;
- font-size: 1.5em;
+ font-size: 1.4em;
  margin-top: 10px;
 }
 .hidden {
@@ -54,6 +63,7 @@ button {
  font-size: 30px;
  animation: fall 5s linear infinite;
  z-index: 0;
+ pointer-events: none;
 }
 @keyframes fall {
  0% {
