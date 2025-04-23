@@ -1,68 +1,65 @@
 body {
- font-family: 'Comic Sans MS', cursive;
- background-color: #fff0f5;
- text-align: center;
- overflow: hidden;
+ background: linear-gradient(to bottom right, #ffe6f0, #fff);
+ font-family: 'Comic Sans MS', cursive, sans-serif;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
  margin: 0;
-}
-h1.typewriter {
- font-size: 2em;
- border-right: 3px solid pink;
- white-space: nowrap;
  overflow: hidden;
- width: 0;
- animation: typing 3s steps(40, end) forwards;
- margin-top: 50px;
+ position: relative;
 }
-@keyframes typing {
- from { width: 0; }
- to { width: 100%; }
+.container {
+ text-align: center;
 }
-.button-container {
- margin: 30px;
+h1 {
+ font-size: 3em;
+ color: #ff69b4;
+ margin-bottom: 40px;
+}
+.buttons {
+ position: relative;
+ height: 200px;
 }
 button {
- font-size: 20px;
- padding: 10px 20px;
+ padding: 15px 30px;
+ font-size: 1.2em;
+ border: none;
+ border-radius: 15px;
  margin: 10px;
  cursor: pointer;
- border-radius: 25px;
- border: none;
+ transition: 0.3s ease;
 }
 #yes {
- background-color: #ff69b4;
+ background-color: #28a745;
  color: white;
 }
 #no {
- background-color: #d3d3d3;
- color: black;
- position: absolute;
-}
-.together {
- font-size: 18px;
- color: #800080;
-}
-.heart-btn {
- background-color: red;
+ background-color: #dc3545;
  color: white;
- font-size: 18px;
- margin-top: 20px;
- border-radius: 50%;
- padding: 10px 20px;
- border: none;
+ position: absolute;
+ top: 0;
+ left: 50%;
+ transform: translateX(-50%);
 }
-.hidden {
- display: none;
- font-size: 20px;
+#counter {
+ margin-top: 40px;
+ font-size: 1.3em;
  color: #ff1493;
- margin-top: 15px;
 }
-.hearts {
- position: fixed;
- width: 100%;
- height: 100%;
- z-index: -1;
- background-image: url('https://i.imgur.com/7oB9a5f.gif');
- background-size: cover;
- opacity: 0.15;
+.heart {
+ position: absolute;
+ font-size: 2em;
+ color: #ff1493;
+ animation: floatUp 4s ease-in infinite;
+}
+@keyframes floatUp {
+ 0% {
+   transform: translateY(0) scale(1);
+   opacity: 1;
+ }
+ 100% {
+   transform: translateY(-100vh) scale(0.5);
+   opacity: 0;
+ }
 }
