@@ -3,9 +3,9 @@ const yesBtn = document.getElementById("yesBtn");
 const loveSection = document.getElementById("loveSection");
 noBtn.addEventListener("mouseover", () => {
  const i = Math.floor(Math.random() * 80);
- const j = Math.floor(Math.random() * 80);
+ const j = Math.floor(Math.random() * 60);
  noBtn.style.left = i + "%";
- noBtn.style.top = j + "%";
+ noBtn.style.top = j + "px";
 });
 yesBtn.addEventListener("click", () => {
  document.querySelector(".question").textContent = "Yaaaay!";
